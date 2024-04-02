@@ -8,17 +8,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.Windows.Media;
 
 namespace PCMRow_WavConverter
 {
     public partial class Form1 : Form
     {
+
+        #region [전역 변수]
+
+        int _channelType = 0;        
+
+        #endregion
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        #region [PCM to WAV]
+
         // WAV 파일 헤더를 작성하는 메서드
-        private byte[] GetWavHeader(long dataLength, int sampleRate = 44100, int bitsPerSample = 16, int channels = 1)
+        private byte[] GetWavHeader(long dataLength, int sampleRate = 8000, int bitsPerSample = 16, int channels = 1)
         {
             long fileSize = dataLength + 36; // 오디오 데이터 크기 + 헤더 크기(36바이트)
             byte[] header = new byte[44];
@@ -49,20 +61,20 @@ namespace PCMRow_WavConverter
             return header;
         }
         // PCM 파일을 WAV 파일로 변환하는 메서드
-        private void ConvertPcmToWav(string pcmFilePath, string wavFilePath, int sampleRate = 44100, int bitsPerSample = 16, int channels = 1)
+        private void ConvertPcmToWav(string pcmFilePath, string wavFilePath, int channels = 1)
         {
             using (var pcmStream = new FileStream(pcmFilePath, FileMode.Open, FileAccess.Read))
             using (var wavStream = new FileStream(wavFilePath, FileMode.Create, FileAccess.Write))
             {
                 var dataLength = pcmStream.Length;
-                var header = GetWavHeader(dataLength, sampleRate, bitsPerSample, channels);
+                var header = GetWavHeader(dataLength, Convert.ToInt32(SamplingRate.Text), Convert.ToInt32(Bit.Text), _channelType);
 
                 wavStream.Write(header, 0, header.Length);
 
                 pcmStream.CopyTo(wavStream);
             }
         }
-        private void FileUpload_Button_Click_1(object sender, EventArgs e)
+        private void FileUpload_Button_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
@@ -94,9 +106,22 @@ namespace PCMRow_WavConverter
         {
             string pcmFilePath = FileUploadPath_TextBox.Text;
             string wavFilePath = Path.Combine(ExportPath_TextBox.Text, "output.wav");
+            ConvertPcmToWav(pcmFilePath, wavFilePath);            
 
-            ConvertPcmToWav(pcmFilePath, wavFilePath);
-            MessageBox.Show("변환 완료!");
+            MessageBox.Show("Wav 형태로 변환을 완료하였습니다.");
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StereoButton.Checked)
+            {
+                _channelType = 2;
+            }
+            else if (MonoButton.Checked)
+            {
+                _channelType = 1;
+            }
+            #endregion
         }
     }
 }
