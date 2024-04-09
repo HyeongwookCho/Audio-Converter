@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{11FBB610-76F5-46CF-A1CC-69F162F0EFBE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PCMRow_WavConverter</RootNamespace>
-    <AssemblyName>PCMRow_WavConverter</AssemblyName>
+    <RootNamespace>AudioConverter</RootNamespace>
+    <AssemblyName>AudioConverter</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,8 +54,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PcmRowFormatToWav.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WavToPcmRowFormat.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
