@@ -35,6 +35,9 @@ namespace AudioConverter
             this.RunConvert_Button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ExportFileName1_TextBox = new System.Windows.Forms.TextBox();
             this.ExportPath_TextBox = new System.Windows.Forms.TextBox();
             this.ExportPath_Button = new System.Windows.Forms.Button();
             this.ConvertFile_Label = new System.Windows.Forms.Label();
@@ -53,6 +56,14 @@ namespace AudioConverter
             this.PCMtoWAV = new System.Windows.Forms.TabPage();
             this.WAVtoPCM = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ExportChannel_textbox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ExportBitRate_TextBox = new System.Windows.Forms.TextBox();
+            this.ExportSamplingRate_textbox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.RunConvert2_Button = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -64,17 +75,6 @@ namespace AudioConverter
             this.FileUploadPath2_TextBox = new System.Windows.Forms.TextBox();
             this.FileUpload2_Button = new System.Windows.Forms.Button();
             this.FileUpload2_Label = new System.Windows.Forms.Label();
-            this.ExportFileName1_TextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -152,6 +152,31 @@ namespace AudioConverter
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 44);
             this.panel2.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(418, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 12);
+            this.label9.TabIndex = 13;
+            this.label9.Text = ".wav";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(319, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 12);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "\\";
+            // 
+            // ExportFileName1_TextBox
+            // 
+            this.ExportFileName1_TextBox.Location = new System.Drawing.Point(341, 11);
+            this.ExportFileName1_TextBox.Name = "ExportFileName1_TextBox";
+            this.ExportFileName1_TextBox.Size = new System.Drawing.Size(71, 21);
+            this.ExportFileName1_TextBox.TabIndex = 11;
             // 
             // ExportPath_TextBox
             // 
@@ -332,10 +357,10 @@ namespace AudioConverter
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.ExportChannel_textbox);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.ExportBitRate_TextBox);
+            this.panel3.Controls.Add(this.ExportSamplingRate_textbox);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label8);
@@ -349,6 +374,75 @@ namespace AudioConverter
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(607, 225);
             this.panel3.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(401, 184);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 12);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "&&";
+            // 
+            // ExportChannel_textbox
+            // 
+            this.ExportChannel_textbox.Location = new System.Drawing.Point(513, 179);
+            this.ExportChannel_textbox.Name = "ExportChannel_textbox";
+            this.ExportChannel_textbox.ReadOnly = true;
+            this.ExportChannel_textbox.Size = new System.Drawing.Size(60, 21);
+            this.ExportChannel_textbox.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(420, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 12);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Channel Type";
+            // 
+            // ExportBitRate_TextBox
+            // 
+            this.ExportBitRate_TextBox.Location = new System.Drawing.Point(157, 179);
+            this.ExportBitRate_TextBox.Name = "ExportBitRate_TextBox";
+            this.ExportBitRate_TextBox.ReadOnly = true;
+            this.ExportBitRate_TextBox.Size = new System.Drawing.Size(60, 21);
+            this.ExportBitRate_TextBox.TabIndex = 34;
+            // 
+            // ExportSamplingRate_textbox
+            // 
+            this.ExportSamplingRate_textbox.Location = new System.Drawing.Point(335, 179);
+            this.ExportSamplingRate_textbox.Name = "ExportSamplingRate_textbox";
+            this.ExportSamplingRate_textbox.ReadOnly = true;
+            this.ExportSamplingRate_textbox.Size = new System.Drawing.Size(60, 21);
+            this.ExportSamplingRate_textbox.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(223, 184);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 12);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "&&";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(242, 184);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 12);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Sampling Rate";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(133, 183);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 12);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Bit";
             // 
             // RunConvert2_Button
             // 
@@ -463,100 +557,6 @@ namespace AudioConverter
             this.FileUpload2_Label.TabIndex = 5;
             this.FileUpload2_Label.Text = "WAV";
             // 
-            // ExportFileName1_TextBox
-            // 
-            this.ExportFileName1_TextBox.Location = new System.Drawing.Point(341, 11);
-            this.ExportFileName1_TextBox.Name = "ExportFileName1_TextBox";
-            this.ExportFileName1_TextBox.Size = new System.Drawing.Size(71, 21);
-            this.ExportFileName1_TextBox.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(319, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 12);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "\\";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(418, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 12);
-            this.label9.TabIndex = 13;
-            this.label9.Text = ".wav";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(401, 184);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 12);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "&&";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(513, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(60, 21);
-            this.textBox1.TabIndex = 36;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(420, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 12);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Channel Type";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(157, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(60, 21);
-            this.textBox2.TabIndex = 34;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(335, 179);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(60, 21);
-            this.textBox3.TabIndex = 33;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(223, 184);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 12);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "&&";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(242, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 12);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Sampling Rate";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(133, 183);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 12);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Bit";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -629,10 +629,10 @@ namespace AudioConverter
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ExportChannel_textbox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ExportBitRate_TextBox;
+        private System.Windows.Forms.TextBox ExportSamplingRate_textbox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

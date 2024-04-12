@@ -122,7 +122,7 @@ namespace AudioConverter
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 // 변환한 파일을 위치할 곳
-                ExportPath_TextBox.Text = folderBrowserDialog.SelectedPath;
+                ExportPath2_TextBox.Text = folderBrowserDialog.SelectedPath;
             }
         }
         private void RunConvert2_Button_Click(object sender, EventArgs e)
@@ -130,9 +130,13 @@ namespace AudioConverter
             string wavFilePath = FileUploadPath_TextBox.Text;
             string FileName = $"{ExportFileName2_TextBox.Text}.wav";
             string pcmFilePath = Path.Combine(ExportPath_TextBox.Text, FileName);
-            _wavToPcmRowFormat.ConvertWavToPcm(wavFilePath, pcmFilePath);
+            _wavToPcmRowFormat.ConvertWavToPCMRow(wavFilePath, pcmFilePath);
 
             MessageBox.Show("PCM Row 형태로 변환을 완료하였습니다.");
+
+            ExportBitRate_TextBox.Text = Convert.ToString(_wavToPcmRowFormat.GetBitPerSample());
+            ExportSamplingRate_textbox.Text = Convert.ToString(_wavToPcmRowFormat.GetSampleRate());
+            ExportChannel_textbox.Text = Convert.ToString(_wavToPcmRowFormat.GetChannel());
         }
         #endregion
 
