@@ -16,7 +16,7 @@ namespace AudioConverter
         /// <returns></returns>
         private byte[] GetWavHeader(long dataLength, int sampleRate, int bitsPerSample, int channel)
         {
-            // 파일 크기 = 오디오 데이터 크기 + 헤더 크기(36바이트)
+            // 파일 크기 = 오디오 데이터 크기 +  ( 헤더 크기(44바이트) - 'RIFF'와 파일 크기 필드의 크기(8바이트) )
             long fileSize = dataLength + 36;
             byte[] header = new byte[44];
 
@@ -25,7 +25,7 @@ namespace AudioConverter
             {
                 // RIFF 헤더
                 writer.Write(Encoding.UTF8.GetBytes("RIFF"));
-                writer.Write((uint)fileSize); // 파일 크기를 uint로 캐스팅하여 쓰기
+                writer.Write((uint)fileSize);
                 writer.Write(Encoding.UTF8.GetBytes("WAVE"));
 
                 // fmt 청크

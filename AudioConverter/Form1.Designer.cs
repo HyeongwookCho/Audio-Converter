@@ -75,6 +75,8 @@ namespace AudioConverter
             this.FileUploadPath2_TextBox = new System.Windows.Forms.TextBox();
             this.FileUpload2_Button = new System.Windows.Forms.Button();
             this.FileUpload2_Label = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -246,7 +248,6 @@ namespace AudioConverter
             this.StereoButton.Name = "StereoButton";
             this.StereoButton.Size = new System.Drawing.Size(59, 16);
             this.StereoButton.TabIndex = 19;
-            this.StereoButton.TabStop = true;
             this.StereoButton.Text = "Stereo";
             this.StereoButton.UseVisualStyleBackColor = true;
             this.StereoButton.CheckedChanged += new System.EventHandler(this.StereoButton_CheckedChanged);
@@ -254,12 +255,10 @@ namespace AudioConverter
             // MonoButton
             // 
             this.MonoButton.AutoSize = true;
-            this.MonoButton.Checked = true;
             this.MonoButton.Location = new System.Drawing.Point(390, 41);
             this.MonoButton.Name = "MonoButton";
             this.MonoButton.Size = new System.Drawing.Size(55, 16);
             this.MonoButton.TabIndex = 14;
-            this.MonoButton.TabStop = true;
             this.MonoButton.Text = "Mono";
             this.MonoButton.UseVisualStyleBackColor = true;
             this.MonoButton.CheckedChanged += new System.EventHandler(this.MonoButton_CheckedChanged);
@@ -472,7 +471,9 @@ namespace AudioConverter
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.ExportFileName2_TextBox);
+            this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.ExportPath2_TextBox);
             this.panel4.Controls.Add(this.ExportPath2_Button);
             this.panel4.Location = new System.Drawing.Point(12, 107);
@@ -484,7 +485,7 @@ namespace AudioConverter
             // 
             this.ExportFileName2_TextBox.Location = new System.Drawing.Point(341, 11);
             this.ExportFileName2_TextBox.Name = "ExportFileName2_TextBox";
-            this.ExportFileName2_TextBox.Size = new System.Drawing.Size(104, 21);
+            this.ExportFileName2_TextBox.Size = new System.Drawing.Size(71, 21);
             this.ExportFileName2_TextBox.TabIndex = 5;
             // 
             // ExportPath2_TextBox
@@ -492,7 +493,7 @@ namespace AudioConverter
             this.ExportPath2_TextBox.Location = new System.Drawing.Point(19, 11);
             this.ExportPath2_TextBox.Name = "ExportPath2_TextBox";
             this.ExportPath2_TextBox.ReadOnly = true;
-            this.ExportPath2_TextBox.Size = new System.Drawing.Size(312, 21);
+            this.ExportPath2_TextBox.Size = new System.Drawing.Size(294, 21);
             this.ExportPath2_TextBox.TabIndex = 4;
             // 
             // ExportPath2_Button
@@ -557,11 +558,29 @@ namespace AudioConverter
             this.FileUpload2_Label.TabIndex = 5;
             this.FileUpload2_Label.Text = "WAV";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(418, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 12);
+            this.label12.TabIndex = 15;
+            this.label12.Text = ".pcm";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(319, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 12);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "\\";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 317);
+            this.ClientSize = new System.Drawing.Size(646, 316);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -636,6 +655,8 @@ namespace AudioConverter
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

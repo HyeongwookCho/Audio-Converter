@@ -127,9 +127,9 @@ namespace AudioConverter
         }
         private void RunConvert2_Button_Click(object sender, EventArgs e)
         {
-            string wavFilePath = FileUploadPath_TextBox.Text;
-            string FileName = $"{ExportFileName2_TextBox.Text}.wav";
-            string pcmFilePath = Path.Combine(ExportPath_TextBox.Text, FileName);
+            string wavFilePath = FileUploadPath2_TextBox.Text;
+            string FileName = $"{ExportFileName2_TextBox.Text}.pcm";
+            string pcmFilePath = Path.Combine(ExportPath2_TextBox.Text, FileName);
             _wavToPcmRowFormat.ConvertWavToPCMRow(wavFilePath, pcmFilePath);
 
             MessageBox.Show("PCM Row 형태로 변환을 완료하였습니다.");
